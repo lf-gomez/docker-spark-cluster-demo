@@ -76,5 +76,7 @@ COPY start-spark.sh /
 
 COPY conf/spark-defaults.conf /opt/spark/conf
 
+RUN sed -i 's/\r$//' /start-spark.sh
+
 CMD ["/bin/bash", "/start-spark.sh"]
 
